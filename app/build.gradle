@@ -18,11 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+    sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
+
 }
 
 dependencies {
@@ -30,5 +31,6 @@ dependencies {
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.20"
+    implementation project(":converter")
 }
 

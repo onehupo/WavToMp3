@@ -11,6 +11,22 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+//        armeabi-v7a: 适用于基于 ARMv7 架构的设备，支持 ARM 32 位指令集。
+//        arm64-v8a: 适用于基于 ARMv8 架构的设备，支持 ARM 64 位指令集。
+//        x86: 适用于基于 x86 架构的设备，支持 Intel 32 位指令集。
+//        x86_64: 适用于基于 x86_64 架构的设备，支持 Intel 64 位指令集。
+//        mips: 适用于基于 MIPS 架构的设备，支持 MIPS 32 位指令集。
+//        mips64: 适用于基于 MIPS64 架构的设备，支持 MIPS 64 位指令集。
+        externalNativeBuild {
+            cmake {
+                //设置cpp配置参数，c文件请使用CFlags
+                cppFlags ""
+                //设置生成指定ABI版本的so库
+                abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'//,'armeabi','mips','mips64'
+            }
+        }
+
     }
 
     buildTypes {
@@ -23,18 +39,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            // 将 JNI 库目录指定为 jniLibs
+            jniLibs.srcDirs = ['src/main/jni']
+        }
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    packagingOptions {
+        //Paths that match a first-pick pattern will be selected into the APK.
+        //If more than one path matches the first-pick, only the first found will be selected.
+        pickFirst 'lib/armeabi-v7a/liblame-mp3-utils.so'
+        pickFirst 'lib/arm64-v8a/liblame-mp3-utils.so'
+        pickFirst 'lib/armeabi/liblame-mp3-utils.so'
+        pickFirst 'lib/x86/liblame-mp3-utils.so'
+        pickFirst 'lib/mips/liblame-mp3-utils.so'
+        pickFirst 'lib/mips64/liblame-mp3-utils.so'
+        pickFirst 'lib/x86_64/liblame-mp3-utils.so'
+    }
+    version "21.0.6113669"
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
