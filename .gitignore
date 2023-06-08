@@ -4,7 +4,6 @@
 .DS_Store
 .idea/
 /build
-repo/
 /captures
 .externalNativeBuild
 framwork/react/libs/
