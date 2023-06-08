@@ -1,0 +1,33 @@
+apply plugin: "maven-publish"
+
+def libraryGroupId = 'dev.hupo.converter'
+def libraryArtifactId = 'wav2mp3'
+def libraryVersion = '1.0.0'
+afterEvaluate {
+
+    publishing {
+        repositories {
+            maven {
+                url = rootProject.layout.projectDirectory.dir("repo")
+            }
+        }
+        publications {
+            androidJniLibrary(MavenPublication) {
+                groupId libraryGroupId
+                artifactId libraryArtifactId
+                version libraryVersion
+
+                artifact("./build/intermediates/compile_library_classes_jar/debug/classes.jar")
+//                artifact(fileTree(dir: 'src/main/jniLibs', include: '**/*.so'))
+            }
+        }
+    }
+
+
+
+
+
+    task publishToMavenRepository {
+        dependsOn 'publishAndroidJniLibraryPublicationToMavenRepository'
+    }
+}

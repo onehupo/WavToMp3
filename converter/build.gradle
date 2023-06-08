@@ -69,3 +69,5 @@ android {
 
 dependencies {
 }
+
+apply from: 'publish.gradle'
