@@ -15,7 +15,7 @@ buildscript {
 allprojects {
     repositories {
 //        maven { url "$rootDir/repo"}
-        maven { url "https://raw.githubusercontent.com/onehupo/WavToMp3/blob/main/repo/"}
+        maven { url "https://raw.githubusercontent.com/onehupo/WavToMp3/main/repo/"}
         mavenLocal()
         mavenCentral()
         jcenter()
