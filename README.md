@@ -7,10 +7,13 @@
 maven { url "https://raw.githubusercontent.com/onehupo/WavToMp3/main/repo/"}
 ```
 
-2.add implementation
+2.add implementation and so
 ```groovy
 implementation "dev.hupo.converter:wav2mp3:1.0.0"
 ```
+
+so from folder 
+`converter/src/main/jniLibs`
 
 3.converterFile
 
