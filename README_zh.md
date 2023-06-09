@@ -6,7 +6,7 @@ LAME是一个开源的音频编码库，它提供了高质量的音频压缩和�
 使用这个库，你可以将音频文件转换为MP3格式以减小文件大小，并在网络传输或存储中节省带宽和存储空间。
 无论是构建音频编辑应用、媒体播放器还是任何其他需要音频转换的应用，这个库都能帮助你轻松地完成任务。
 
-![](./image/Screenshot.png)
+<img src="./image/Screenshot.png" alt="Screenshot" width="432" height="936">
 
 ## Use
 

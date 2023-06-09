@@ -7,9 +7,8 @@ enabling audio format conversion and compression in their applications. With thi
 MP3 format to reduce file size, saving bandwidth and storage space in network transfers or storage. Whether you're building an audio editing app, 
 a media player, or any other application that requires audio conversion, this library can help you accomplish the task effortlessly.
 
-![](./image/Screenshot.png)
 
-<img src="./image/Screenshot.png" alt="Screenshot" width="400" height="300">
+<img src="./image/Screenshot.png" alt="Screenshot" width="432" height="936">
 
 
 ## Use
