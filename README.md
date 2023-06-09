@@ -1,5 +1,7 @@
 ## WavToMp3
 
+[README 中文版](./README_zh.md)
+
 This Android library is based on the LAME library and provides functionality to convert WAV audio files to the MP3 format. 
 LAME is an open-source audio encoding library that offers high-quality audio compression and encoding algorithms.
 This library offers a simple yet powerful interface, allowing developers to easily convert WAV files to MP3 format,
@@ -42,3 +44,14 @@ WavToMp3Converter.setListener {
 }
 WavToMp3Converter.convert(config)
 ```
+
+Where Mp3ConverterConfig contains the following configuration information:
+
+| Field Name       | Type    | Default Value | Description                                   |
+|------------------|---------|---------------|-----------------------------------------------|
+| inputSampleRate  | Integer | 16000         | Sets the input audio sample rate (in Hz).      |
+| channels         | Integer | 1             | Sets the number of channels in the input audio.|
+| bRate            | Integer | 128           | Sets the output audio bit rate (in kbps).      |
+| outputSampleRate | Integer | 16000         | Sets the output audio sample rate (in Hz).     |
+| inputFile        | String  | Empty String  | Sets the path of the input file for conversion.|
+| outputFile       | String  | Empty String  | Sets the path of the output file after conversion. |

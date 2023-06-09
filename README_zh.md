@@ -40,3 +40,13 @@ WavToMp3Converter.setListener {
 WavToMp3Converter.convert(config)
 ```
 
+其中`Mp3ConverterConfig`中包含了配置信息，需要根据实际情况进行配置
+
+| 字段名 | 类型   | 默认值   | 描述                                |
+|--------|--------|----------|-------------------------------------|
+| inputSampleRate | 整数   | 16000    | 设置输入音频的采样率（以Hz为单位）。 |
+| channels       | 整数   | 1        | 设置输入音频的声道数。              |
+| bRate          | 整数   | 128      | 设置输出音频的比特率（以kbps为单位）。|
+| outputSampleRate | 整数 | 16000    | 设置输出音频的采样率（以Hz为单位）。 |
+| inputFile      | 字符串 | 空字符串  | 设置要进行转换的输入文件的路径。     |
+| outputFile     | 字符串 | 空字符串  | 设置转换后的音频文件的输出路径。     |
