@@ -9,6 +9,9 @@ a media player, or any other application that requires audio conversion, this li
 
 ![](./image/Screenshot.png)
 
+<img src="./image/Screenshot.png" alt="Screenshot" width="400" height="300">
+
+
 ## Use
 
 1. Add Maven repository to your build file (e.g., build.gradle).
