@@ -45,7 +45,7 @@ WavToMp3Converter.setListener {
 WavToMp3Converter.convert(config)
 ```
 
-Where Mp3ConverterConfig contains the following configuration information:
+Mp3ConverterConfig contains the following configuration information:
 
 | Field Name       | Type    | Default Value | Description                                   |
 |------------------|---------|---------------|-----------------------------------------------|
@@ -55,3 +55,9 @@ Where Mp3ConverterConfig contains the following configuration information:
 | outputSampleRate | Integer | 16000         | Sets the output audio sample rate (in Hz).     |
 | inputFile        | String  | Empty String  | Sets the path of the input file for conversion.|
 | outputFile       | String  | Empty String  | Sets the path of the output file after conversion. |
+
+If proguard is enabled in the project, it is necessary to configure the keep rules to prevent certain classes from being proguard.
+
+```
+-keep class dev.hupo.converter.** { *; }
+```

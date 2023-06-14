@@ -50,3 +50,9 @@ WavToMp3Converter.convert(config)
 | outputSampleRate | 整数 | 16000    | 设置输出音频的采样率（以Hz为单位）。 |
 | inputFile      | 字符串 | 空字符串  | 设置要进行转换的输入文件的路径。     |
 | outputFile     | 字符串 | 空字符串  | 设置转换后的音频文件的输出路径。     |
+
+如果在项目中使用了混淆的功能，需要配置keep类避免被混淆
+
+```
+-keep class dev.hupo.converter.** { *; }
+```
